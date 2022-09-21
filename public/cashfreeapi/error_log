@@ -1,0 +1,10 @@
+[06-Jan-2022 10:22:09 UTC] PHP Fatal error:  Uncaught Error: Cannot use object of type stdClass as array in /home/shriarambhv/public_html/cashfreeapi/addbeni.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 23
+[06-Jan-2022 11:27:13 UTC] PHP Notice:  Undefined variable: y8 in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 2
+[06-Jan-2022 11:27:13 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'shriarambhv_sl'@'localhost' (using password: YES) in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 2
+[06-Jan-2022 11:27:13 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 4
+[06-Jan-2022 11:27:13 UTC] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, null given in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 5
+[06-Jan-2022 11:28:00 UTC] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, bool given in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 5
+[06-Jan-2022 11:28:28 UTC] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, bool given in /home/shriarambhv/public_html/cashfreeapi/addbeni.php on line 5
