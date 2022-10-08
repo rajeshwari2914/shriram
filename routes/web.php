@@ -23,6 +23,9 @@ use App\Http\Controllers\ShriramController;
 Route::get('admin', function () {
     return view('shopee.index');
 });*/
+Route::get('demo',function(){
+    return view('shopee.demo');
+});
 /** Start Front End Route's **/
 Route::get('/',[FrontController::class,'loginadmin']);
 Route::post('checklogin',[FrontController::class,'checklogin']);
@@ -40,7 +43,10 @@ Route::get('sessionoff',[FrontController::class,'sessionoff']);
 Route::resource('products',ProductController::class);
 Route::get('printbill/{id}',[ShriramController::class,'printbill']);
 
-
+Route::get('paint_details',[ShriramController::class,'paint_details']);
+Route::get('shirt_details',[ShriramController::class,'shirt_details']);
+Route::get('kurta_details',[ShriramController::class,'kurta_details']);
+Route::get('nehrushirt_details',[ShriramController::class,'nehrushirt_details']);
 
 
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SL Mart</title>
+    <title>SHREE RAM</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet" />
@@ -23,8 +23,9 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -36,7 +37,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/index">Shriram Tailors</a>
+                <a class="navbar-brand" href="/index" style="color:white;line-height:20px;margin-top:-5px;">Shree Ram Tailors</a>
             </div>
 
             <div class="header-right">
@@ -69,9 +70,21 @@
                         <a  href="/index" class="active-menu"><i class="fa fa-dashboard "></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/details/create"><i class="fa fa-bicycle "></i>Add Customer Details</a>
+                        <a href="/details/create"><i class="fa fa-user" aria-hidden="true" style="font-size:20px;"></i>Add Customer Details</a>
                     </li>
                     <li>
+                        <a href="/paint_details"><i class="fa fa-male" aria-hidden="true" style="font-size:20px;"></i>Paint Details</a>
+                    </li>
+                    <li>
+                        <a href="/shirt_details"><i class="fa fa-male" aria-hidden="true" style="font-size:20px;"></i>Shirt Details</a>
+                    </li>
+                    <li>
+                        <a href="/kurta_details"><i class="fa fa-male" aria-hidden="true" style="font-size:20px;"></i>Short Kurta Details</a>
+                    </li>
+                    <li>
+                        <a href="/nehrushirt_details"><i class="fa fa-male" aria-hidden="true" style="font-size:20px;"></i>Nehru Shirt Details</a>
+                    </li>
+                    <!-- <li>
                         <a href="/details"><i class="fa fa-bicycle "></i>View Customer Details</a>
                          <!-- <ul class="nav nav-second-level">
                            
@@ -81,8 +94,8 @@
 							<li>
                                 <a href="/products"><i class="fa fa-desktop "></i>View All</a>
                             </li>
-						</ul> -->
-                    </li>
+						</ul> 
+                    </li> -->
 				</ul>
 
             </div>

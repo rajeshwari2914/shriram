@@ -30,7 +30,7 @@
                   <!--   Kitchen Sink -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Customer Details
+                            Short Kurta Details
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -60,7 +60,7 @@
 									<?php
 									$i=1;
 									?>
-									@foreach($shriram as $cate)
+									@foreach($paint as $cate)
                                         <tr>
                                             <td>{{$cate->id}}</td>
                                             
@@ -123,8 +123,26 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#datatable').DataTable();
-        } );
+        // For the example - show interactions with the table
+var eventFired = function ( type ) {
+    var n = document.querySelector('#demo_info');
+    n.innerHTML += '<div>'+type+' event - '+new Date().getTime()+'</div>';
+    n.scrollTop = n.scrollHeight;     
+}
+ 
+document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('#datatables');
+ 
+    table
+        .on('order', function () {
+            eventFired( 'Order' );
+        })
+        .on('search', function () {
+            eventFired( 'Search' );
+        })
+        .on('page', function () {
+            eventFired( 'Page' );
+        });
+});
     </script>
 @stop

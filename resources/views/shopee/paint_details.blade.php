@@ -5,7 +5,7 @@
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Customer Details</h1>
+                        <h1 class="page-head-line">Paint Details</h1>
                         <!--<h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>-->
 						
                     </div>
@@ -60,7 +60,7 @@
 									<?php
 									$i=1;
 									?>
-									@foreach($shriram as $cate)
+									@foreach($paint as $cate)
                                         <tr>
                                             <td>{{$cate->id}}</td>
                                             
@@ -83,7 +83,7 @@
                                             <td>{{$cate->material_qty}}</td>
                                             <td>{{$cate->total_amt}}</td>
                                             <td>{{$cate->advance_amt}}</td>
-                                            <td><button class="btn btn-warning">{{$rem}}</button></td>
+                                            <td><button type="button" class="btn btn-warning remaningamt" value="">{{$rem}}</button></td>
 											<td>
 											<form action="{{route('details.destroy',$cate->id)}}" method="post">
 											@csrf
@@ -123,8 +123,56 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#datatable').DataTable();
-        } );
+    $(document).ready(function()
+    {
+        $(".remaningamt").on('click',function(){
+        let text = "Are You Sure";
+        if (confirm(text) == true) {
+            var id=$(this).val();
+            alert(id);
+			$.ajax({
+			    url:'/api/remaningapi/'+id,
+				method:'get',
+				success:function(data)
+				{
+                    alert(data);
+					// $("#taluka").html(data);
+				},	
+				error:function(data)
+				{
+					alert(data);
+				}
+			});
+
+        } else {
+            text = "You canceled!";
+        }
+        // alert(id);
+        });
+    });
     </script>
+    <script>
+        // For the example - show interactions with the table
+var eventFired = function ( type ) {
+    var n = document.querySelector('#demo_info');
+    n.innerHTML += '<div>'+type+' event - '+new Date().getTime()+'</div>';
+    n.scrollTop = n.scrollHeight;     
+}
+ 
+document.addEventListener('DOMContentLoaded', function () {
+    let table = new DataTable('#datatables');
+ 
+    table
+        .on('order', function () {
+            eventFired( 'Order' );
+        })
+        .on('search', function () {
+            eventFired( 'Search' );
+        })
+        .on('page', function () {
+            eventFired( 'Page' );
+        });
+});
+    </script>
+    
 @stop

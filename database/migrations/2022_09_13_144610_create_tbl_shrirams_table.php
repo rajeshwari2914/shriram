@@ -23,10 +23,12 @@ class CreateTblShriramsTable extends Migration
             $table->string('pendri');
             $table->string('order_date');
             $table->string('delivery_date');
-            $table->string('shirt_qty');
-            $table->string('paint_qty');
+            $table->string('material');
+            $table->string('material_qty');
             $table->string('total_amt');
             $table->string('advance_amt');
+            $table->string('coller_size');
+            $table->string('bound_patti_size');
             $table->timestamps();
         });
     }

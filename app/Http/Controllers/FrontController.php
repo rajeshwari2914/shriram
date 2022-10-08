@@ -29,7 +29,7 @@ class FrontController extends Controller
 			else
 			{
 				echo "<script>alert('Invalid Credential');
-				window.location.href='/admin';
+				window.location.href='/';
 				</script>";
 			}	
 		

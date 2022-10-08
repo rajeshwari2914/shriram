@@ -18,8 +18,7 @@
                            Customer Form
                         </div>
                         <div class="panel-body">
-                            <form role="form" method="post" action="{{route('details.store')}}" enctype="multipart/form-data">
-							
+                            <form  method="post" action="{{route('details.store')}}" enctype="multipart/form-data">
 							@csrf
                                 <div class="col-md-12">
                                         <div class="col-md-6">
@@ -31,43 +30,120 @@
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Contact Number</label>
-                                            <input class="form-control" type="text" name="contact" maxlength="10" pattern="/^[0-9]{10}*/" title="Enter Valid Number">
+                                            <input class="form-control" type="text" name="contact" pattern="[0-9]{10}" title="Enter Valid Number">
 										</div>
                                         </div>
                                 </div>
                                 <div class="col-md-12">
+                                        <div class="col-md-4">
+							            <div class="form-group">
+                                            <label>Select Material</label>
+                                            <!-- <input class="form-control shirt_id" type="number" name="shirt_qty" required>
+                                            <input class="form-control shirt_total" type="hidden" name="" required> -->
+                                            <select class="form-control materialname" type="text" name="material" required>
+                                                <option value="">Select Material</option>
+                                                <option value="Shirt">Shirt</option>
+                                                <option value="Paint">Paint</option>
+                                                <option value="Kurta">Short Kurta</option>
+                                                <option value="Nehru_shirt">Nehru Shirt</option>
+                                            </select>
+										</div>
+                                        </div>
+                                        <div class="col-md-8">
+                                        <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1">Description</label>
+                                                <textarea class="form-control summernote" style="word-spacing:1cm;padding-top:1cm;line-height: 500%;letter-spacing:5px;" name="desc"></textarea>
+                                            </div>
+                                        </div>
+                                </div>
+                                <!-- <div class="col-md-12">
                                     <div class="col-md-12">
                                     <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1">Description</label>
-                                                <textarea class="form-control" id="summernote" name="desc"></textarea>
+                                                <textarea class="form-control summernote" style="word-spacing:1cm;padding-top:1cm;line-height: 500%;" name="desc"></textarea>
                                             </div>
                                     </div>
                                     
-                                </div>
-                                <div class="col-md-12">
+                                </div> -->
+                                <div class="col-md-12 paintpoint" style="display:none;">
                                 <div class="col-md-4">
                                     <div class="form-group">
                                             <label>Select</label>
-                                            <select class="form-control" type="text" name="iron" required>
+                                            <select class="form-control" type="text" name="iron">
                                                 <option>CD उभी इस्त्री</option>
                                                 <option>साईड पाॅकीट दोन प्लेट</option>
                                                 <option>CD अडवी इस्त्री</option>
                                             </select>
 									</div>
                                     </div>
-                                        <div class="col-md-4">
+                                        <!-- <div class="col-md-4">
 							            <div class="form-group">
                                             <label>Ring</label>
                                             <input class="form-control" type="text" name="ring" required>
 										</div>
-                                        </div>
-                                        <div class="col-md-4">
+                                        </div> -->
+                                        <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Pendri Major</label>
-                                            <input class="form-control" type="text" name="pendri" required>
+                                            <input class="form-control" type="text" name="pmap">
+										</div>
+                                        </div>
+                                        <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Ring</label>
+                                            <input class="form-control" type="text" name="ring">
+										</div>
+                                        </div>
+                                        <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Paint Quantity</label>
+                                            <input class="form-control material_pqty" type="number" name="pqty">
 										</div>
                                         </div>
                                 </div>
+
+                                <div class="col-md-12 shirtpoint" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label>Collar Size</label>
+                                            <input class="form-control" type="text" name="collar_size">
+									</div>
+                                    </div>
+                                        <!-- <div class="col-md-4">
+							            <div class="form-group">
+                                            <label>Ring</label>
+                                            <input class="form-control" type="text" name="ring" required>
+										</div>
+                                        </div> -->
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Shirt Quantity</label>
+                                            <input class="form-control material_qty" type="number" name="mqty">
+										</div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-12 kurtapoint" style="display:none;">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                            <label>Bound Patti Size</label>
+                                            <input class="form-control" type="text" name="bound_size">
+									</div>
+                                    </div>
+                                        <!-- <div class="col-md-4">
+							            <div class="form-group">
+                                            <label>Ring</label>
+                                            <input class="form-control" type="text" name="ring" required>
+										</div>
+                                        </div> -->
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Quantity</label>
+                                            <input class="form-control material_kqty" type="number" name="kqty">
+										</div>
+                                        </div>
+                                </div>
+
                                 <div class="col-md-12">
                                         <div class="col-md-6">
 							            <div class="form-group">
@@ -82,21 +158,7 @@
 										</div>
                                         </div>
                                 </div>
-                                <div class="col-md-12">
-                                        <div class="col-md-6">
-							            <div class="form-group">
-                                            <label>Shirt Quantity</label>
-                                            <input class="form-control shirt_id" type="number" name="shirt_qty" required>
-                                            <input class="form-control shirt_total" type="hidden" name="" required>
-										</div>
-                                        </div>
-                                        <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Paint Quentity</label>
-                                            <input class="form-control paint_id" type="number" name="paint_qty" required>
-										</div>
-                                        </div>
-                                </div>
+                                
                                 <div class="col-md-12">
                                         <div class="col-md-6">
 							            <div class="form-group">
@@ -108,12 +170,12 @@
                                         <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Advanced Amount</label>
-                                            <input class="form-control" type="text" name="advance_amt" required>
+                                            <input class="form-control" type="text" name="advance_amt" value="0" required>
 										</div>
                                         </div>
                                 </div>
                                         
-                                    <center><button type="submit" class="btn btn-info" style="padding:10px;width:20%;">Add Customer Details</button></center>
+                                    <center><input type="submit" class="btn btn-info" style="padding:10px;width:20%;" value="Add Customer Details"></center>
                                 </form>
                             </div>
                         </div>
@@ -132,17 +194,62 @@
     
 <script>
 $(document).ready(function(){
-
-    $(".shirt_id").on('change',function(){
+    $(".materialname").on('change',function(){
         var id=$(this).val();
-        //alert(id);
-        var stotal=350*id;
         
-        $('.shirt_total').val(stotal);    
-		var total=$('.shirt_total').val();
-        $('.total').val(total);
-        //$('.total').val(stotal);
+        if(id=='Shirt')
+        {
+            $('.shirtpoint').css("display","block");
+            $('.paintpoint').css("display","none");
+            $('.kurtapoint').css("display","none");
+
+        }
+        else if(id=='Paint')
+        {
+            $('.paintpoint').css("display","block");
+            $('.shirtpoint').css("display","none");
+            $('.kurtapoint').css("display","none");
+        }else if(id=='Kurta' || id=='Nehru_shirt')
+        {
+            $('.paintpoint').css("display","none");
+            $('.shirtpoint').css("display","none");
+            $('.kurtapoint').css("display","block");
+        }
     });
+    $(".material_qty").on('change',function(){
+        var mate=$('.materialname').val();
+        var mid=$(this).val();
+        //alert(id);
+            if(mate=='Shirt')
+            {
+                var stotal=350*mid;
+                $('.total').val(stotal);    
+                // var total=$('.material_qty').val();
+                // $('.total').val(total);
+                //$('.total').val(stotal);
+            }
+
+    });
+    $(".material_pqty").on('change',function(){
+        var mate=$('.materialname').val();
+        var mid=$(this).val();
+        //alert(id);
+            if(mate=='Paint')
+            {
+                var stotal=400*mid;
+                $('.total').val(stotal);    
+                // var total=$('.material_qty').val();
+                // $('.total').val(total);
+                //$('.total').val(stotal);
+            }
+
+    });
+    $(".material_kqty").on('change',function(){
+        var mkid=$(this).val();
+        var ktotal=350*mkid;
+        $('.total').val(ktotal);
+    })
+
     //alert(st);
     $(".paint_id").on('change',function(){
         var pid=$(this).val();
@@ -168,8 +275,8 @@ $(document).ready(function(){
         //}
        
     });
-    $('#summernote').summernote();
+   
 });
-</script>
 
-   @stop
+</script>
+@stop
